@@ -5,11 +5,12 @@ from flask_sqlalchemy import SQLAlchemy
 
 from models import User, Message, Contact
 from database import SessionLocal
+import os
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URL'] = "sqlite:///db/messenger.db"
-# app.config['SQLALCHEMY_DATABASE_URL'] = "sqlite:///:memory:"
+# app.config['SQLALCHEMY_DATABASE_URL'] = "sqlite:///db/messenger.db"
+app.config['SQLALCHEMY_DATABASE_URL'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['FLASK_ADMIN_SWATCH'] = 'flatly'
 app.config['SECRET_KEY'] = 'secret'
