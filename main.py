@@ -12,8 +12,8 @@ from auth import AuthHandler
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="../frontend/static"), name="static")
-templates = Jinja2Templates(directory="../frontend/templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 auth_handler = AuthHandler()
 
 
@@ -147,5 +147,5 @@ async def get_contacts(token: str | None = Cookie(None),
     return crud.get_contacts_user_by_id(db=db, user_id=id_auth_user)
 
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", log_level="info")
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", log_level="info")

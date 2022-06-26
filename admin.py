@@ -8,7 +8,7 @@ from database import SessionLocal
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URL'] = "sqlite:///../db/messenger.db"
+app.config['SQLALCHEMY_DATABASE_URL'] = "sqlite:///db/messenger.db"
 # app.config['SQLALCHEMY_DATABASE_URL'] = "sqlite:///:memory:"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['FLASK_ADMIN_SWATCH'] = 'flatly'
