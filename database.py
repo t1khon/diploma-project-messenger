@@ -4,10 +4,10 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///db/messenger.db"
-SQLALCHEMY_DATABASE_URL = os.environ.get("DATABASE_URL")
+SQLALCHEMY_DATABASE_URL = os.environ.get("DATABASE_PSQL_URL")
 
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    SQLALCHEMY_DATABASE_URL
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

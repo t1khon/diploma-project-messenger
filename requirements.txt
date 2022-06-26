@@ -5,3 +5,4 @@ PyJWT
 flask-admin
 flask_sqlalchemy
 gunicorn
+psycopg2
