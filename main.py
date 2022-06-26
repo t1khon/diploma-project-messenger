@@ -8,11 +8,9 @@ import uvicorn
 from database import SessionLocal, engine
 import crud, models, schemas
 from auth import AuthHandler
-import admin
 
 models.Base.metadata.create_all(bind=engine)
 
-admin.app.run()
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
