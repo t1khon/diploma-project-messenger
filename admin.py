@@ -22,5 +22,5 @@ admin.add_view(ModelView(Message, SessionLocal()))
 admin.add_view(ModelView(Contact, SessionLocal()))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
     
