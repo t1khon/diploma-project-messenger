@@ -4,3 +4,4 @@ passlib[bcrypt]
 PyJWT
 flask-admin
 flask_sqlalchemy
+gunicorn
